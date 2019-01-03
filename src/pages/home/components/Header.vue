@@ -37,7 +37,7 @@ export default {
             background :#FFF
             margin-top: 0.14rem
             height: 0.64rem
-            line-height : 0.54rem
+            line-height : 0.64rem
             margin-left: 0.2rem
             padding-left: 0.2rem
             border-radius : 0.1rem

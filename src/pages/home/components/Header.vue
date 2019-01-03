@@ -9,7 +9,7 @@
         </div>
         <div class = "header-right">
             城市
-            <span class="iconfont arrow-icon">&#xe8f7;</span>
+            <span class="iconfont arrow-icon">&#xe62d;</span>
         </div>
     </div>
 </template>
@@ -47,8 +47,6 @@ export default {
             float: right
             text-align : center
             .arrow-icon
-                font-size: 0.44rem
-                line-height :0.86rem
-                margin-left: -0.12rem
-                margin-top: 0.2rem
+                font-size: 0.24rem
+                margin-left: -0.04rem
 </style>

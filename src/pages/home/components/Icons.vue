@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page, index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
@@ -9,6 +9,7 @@
                     <p class = "icon-desc">{{item.desc}}</p>
                 </div>
             </swiper-slide>
+            <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
     </div>
 </template>
@@ -17,10 +18,14 @@ export default {
     name:"HomeIcons",
     data: function(){
         return{
+            swiperOption:{
+                pagination: '.swiper-pagination',
+                loop:true
+            },
             IconList:[{
                 id: '0001',
                 imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                desc: '景点门票景点门票景点门票景点门票'
+                desc: '景点门票'
             },{
                 id: '0002',
                 imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
@@ -54,10 +59,6 @@ export default {
                 imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png',
                 desc: '西湖'
             }],
-            swiperOption:{
-                pagination: '.swiper-pagination',
-                loop:true
-            },
         }
     },
     computed:{
@@ -82,10 +83,7 @@ export default {
         height: 0
         padding-bottom: 50%
     .icons
-        overflow:hidden
-        height: 0
-        padding-bottom:100%
-        width: 100%
+        margin-top: .1rem
         .icon
             position: relative
             overflow: hidden

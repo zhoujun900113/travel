@@ -35,7 +35,7 @@ export default {
         .header-input
             flex: 1
             background :#FFF
-            margin-top: 0.14rem
+            margin-top: 0.12rem
             height: 0.64rem
             line-height : 0.64rem
             margin-left: 0.2rem

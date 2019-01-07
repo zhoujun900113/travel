@@ -16,30 +16,8 @@
 <script>
 export default {
     name: "HomeRecommend",
-    data: function(){
-        return{
-            recommendList:[{
-                id:"0001",
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1810/cc/cc47164357acbeb5a3.water.jpg_200x200_151f0405.jpg",
-                title:"杭州云曼温泉",
-                desc:"岛上风光秀丽迷人"
-            },{
-                id:"0002",
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1810/cc/cc47164357acbeb5a3.water.jpg_200x200_151f0405.jpg",
-                title:"杭州云曼温泉",
-                desc:"岛上风光秀丽迷人"
-            },{
-                id:"0003",
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1810/cc/cc47164357acbeb5a3.water.jpg_200x200_151f0405.jpg",
-                title:"杭州云曼温泉",
-                desc:"岛上风光秀丽迷人"
-            },{
-                id:"0004",
-                imgUrl:"http://img1.qunarzz.com/sight/p0/1810/cc/cc47164357acbeb5a3.water.jpg_200x200_151f0405.jpg",
-                title:"杭州云曼温泉",
-                desc:"岛上风光秀丽迷人"
-            }]
-        }
+    props:{
+        recommendList: Array
     }
 }
 </script>

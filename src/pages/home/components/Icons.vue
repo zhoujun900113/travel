@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="showiconList">
             <swiper-slide v-for="(page, index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
@@ -22,44 +22,10 @@ export default {
                 pagination: '.swiper-pagination',
                 loop:true
             },
-            IconList:[{
-                id: '0001',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-                desc: '景点门票'
-            },{
-                id: '0002',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-                desc: '一日游'
-            },{
-                id: '0003',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-                desc: '杭州必游'
-            },{
-                id: '0004',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
-                desc: '动植物园'
-            },{
-                id: '0005',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1811/f6/e54fad3ea337b02.gif',
-                desc: '年终大促'
-            },{
-                id: '0006',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png',
-                desc: '西湖'
-            },{
-                id: '0007',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png',
-                desc: '泡温泉'
-            },{
-                id: '0008',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png',
-                desc: '西溪湿地'
-            },{
-                id: '0009',
-                imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png',
-                desc: '西湖'
-            }],
         }
+    },
+    props:{
+        IconList: Array
     },
     computed:{
         pages(){
@@ -72,6 +38,9 @@ export default {
                 pages[page].push(item)
             })
             return pages
+        },
+        showiconList(){
+            return this.IconList.length
         }
     }
 }

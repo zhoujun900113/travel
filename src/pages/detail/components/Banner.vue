@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1810/cc/cc47164357acbeb5a3.water.jpg_600x330_aed5d0a5.jpg" />
+            <img class="banner-img" :src="bannerImg" />
             <div class="banner-info">
-                <div class="banner-title">杭州云曼温泉</div>
+                <div class="banner-title">{{sightName}}</div>
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xe692;</span>  
                     14
@@ -11,7 +11,7 @@
             </div>
         </div>
         <common-gallary 
-        :imgs="imgs" 
+        :imgs="gallaryImgs" 
         v-show="showGallary"
         @close="handleGallaryClick"></common-gallary>
 
@@ -24,11 +24,14 @@ export default {
     components:{
         CommonGallary
     },
+    props:{
+        bannerImg: String,
+        gallaryImgs: Array,
+        sightName: String
+    },
     data(){
         return {
             showGallary: false,
-            imgs: ["http://img1.qunarzz.com/sight/p0/1810/54/54a97e731330c416a3.water.jpg_350x240_dd786cb7.jpg",
-                   "http://img1.qunarzz.com/sight/p0/1810/db/dbbb0185c540908ba3.water.jpg_350x240_ebdb27d2.jpg"]
         }
     },
     methods:{
